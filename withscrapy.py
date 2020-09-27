@@ -53,7 +53,7 @@ movie_link = index.get_attribute("href")
 print(movie_link)
 
 xpath_title = "/html/body/div[4]/div/table/tbody/tr[1]/td/table/tbody/tr/td/center/b/b/table[4]/tbody/tr[" + k + "]/td[2]/table[1]/tbody/tr/td[1]/a"
-title = driver.find_element_by_xpath(xpath_title)
+"""title = driver.find_element_by_xpath(xpath_title)
 title2 = title.text
 title2 = str(title2)
 print(title2)
@@ -61,5 +61,6 @@ title2.replace(' ', 'a')
 print(title2)
 filename = str(title2) + ".torrent"
 testfile = urllib.request.urlretrieve("https://zamunda.net/download.php/589391/Gemini.Man.2019.V2.BDRip.XviD.AC3-EVO.torrent", "geminiman.torrent")
-#testfile.retrieve(movie_link, filename)
+#testfile.retrieve(movie_link, filename)"""
+
 driver.quit()
