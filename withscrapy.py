@@ -1,6 +1,7 @@
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 import urllib.request
+import config
 
 options = Options()
 options.headless = True
@@ -11,11 +12,11 @@ driver.get("https://zamunda.net/catalogs/movies?letter=&t=movie&search=gemini+ma
 #title = driver.find_element_by_xpath('//h1')
 username = driver.find_element_by_name("username")
 username.clear()
-username.send_keys("mvayer")
+username.send_keys(config.username)
 
 password = driver.find_element_by_name("password")
 password.clear()
-password.send_keys("ju4kaku4ka")
+password.send_keys(config.password)
 
 driver.find_element_by_xpath("/html/body/div[4]/div/table/tbody/tr[1]/td/table/tbody/tr/td/form/table/tbody/tr[3]/td/input").click()
 
@@ -46,13 +47,17 @@ print(movie_dict)
 sorted_movies = sorted(movie_dict.items(), key=lambda x: x[1])
 print(sorted_movies[0][1])
 k = str(sorted_movies[0][0])
-
+print(k)
 xpath_index = "/html/body/div[4]/div/table/tbody/tr[1]/td/table/tbody/tr/td/center/b/b/table[4]/tbody/tr[" + k + "]/td[1]/a"
 index = driver.find_element_by_xpath(xpath_index)
-movie_link = index.get_attribute("href")
-print(movie_link)
+index.click()
+
+#movie_link = index.get_attribute("href")
+#print(movie_link)
 
 xpath_title = "/html/body/div[4]/div/table/tbody/tr[1]/td/table/tbody/tr/td/center/b/b/table[4]/tbody/tr[" + k + "]/td[2]/table[1]/tbody/tr/td[1]/a"
+
+
 """title = driver.find_element_by_xpath(xpath_title)
 title2 = title.text
 title2 = str(title2)
