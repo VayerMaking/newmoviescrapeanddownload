@@ -1,2 +1,5 @@
-.torrent/
+*.torrent
 config.py
+test.txt
+config.sh
+/__pycache__
