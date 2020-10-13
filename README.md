@@ -8,7 +8,7 @@ Using Python and Bash to automatically download the newest movies.
 
 ## First ofc
 
-    git clone https://github.com/VayerMaking/newmoviesscrapeanddownload
+    git clone https://github.com/VayerMaking/newmoviescrapeanddownload
 
 
 ## How to use
@@ -34,6 +34,8 @@ cofig_sample.py
 ```
 
 contains a sample file to store secret variables used in main.py
+
+### You need to make 2 files: config.py and config.sh. Use config_sample.py and config_sample.sh as a template and add your credentials and details!
 
 ## Author
 
