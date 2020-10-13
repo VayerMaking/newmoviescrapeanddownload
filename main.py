@@ -8,7 +8,8 @@ from selenium.webdriver.chrome.options import Options
 import urllib.request
 import config
 from selenium.common.exceptions import NoSuchElementException
-
+import os
+import subprocess
 
 options = Options()
 options.headless = True
@@ -87,6 +88,8 @@ j = newest_movies()
 print(j)
 for i in j:
     print(i)
-    #seach_if_those_movies_are_avaible(i)
+    seach_if_those_movies_are_avaible(i)
 #seach_if_those_movies_are_avaible("Hard Kill")
+p = subprocess.Popen(['./torrent_send.sh'])
+sts = os.waitpid(p.pid, 0)
 driver.quit()
